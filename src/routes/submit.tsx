@@ -69,7 +69,7 @@ function Submit() {
     description: "",
   });
   const [links, setLinks] = useState<string[]>([""]);
-  const [files, setFiles] = useState<File[]>([]);
+  const [files, setFiles] = useState<(File | null)[]>([null]);
   const [loading, setLoading] = useState(false);
 
   function update<K extends keyof typeof form>(k: K, v: (typeof form)[K]) {
@@ -86,9 +86,20 @@ function Submit() {
     setLinks((arr) => arr.filter((_, idx) => idx !== i));
   }
 
+  function updateFile(i: number, f: File | null) {
+    setFiles((arr) => arr.map((x, idx) => (idx === i ? f : x)));
+  }
+  function addFile() {
+    setFiles((arr) => [...arr, null]);
+  }
+  function removeFile(i: number) {
+    setFiles((arr) => arr.filter((_, idx) => idx !== i));
+  }
+
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    for (const f of files) {
+    const realFiles = files.filter((f): f is File => f !== null);
+    for (const f of realFiles) {
       if (f.size > MAX_FILE_MB * 1024 * 1024) {
         toast.error(`"${f.name}" is over ${MAX_FILE_MB}MB. Email it to art@collagelab.ca instead.`);
         return;
@@ -97,7 +108,7 @@ function Submit() {
     setLoading(true);
     try {
       const file_paths: string[] = [];
-      for (const file of files) {
+      for (const file of realFiles) {
         const { path, token } = await getUploadUrl({
           data: { filename: file.name, contentType: file.type || "application/octet-stream" },
         });
