@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ScribbleStar } from "./decor";
+import logoAsset from "@/assets/logo.svg.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -10,16 +10,17 @@ const nav = [
   { to: "/advertise", label: "Advertise" },
 ] as const;
 
-
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-foreground/15 bg-background/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <Link to="/" className="group flex items-center gap-2.5">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-tomato text-cream transition-transform group-hover:rotate-12">
-            <ScribbleStar className="h-5 w-5" />
-          </span>
+        <Link to="/" className="group flex items-center gap-3">
+          <img
+            src={logoAsset.url}
+            alt="CollageLab logo"
+            className="h-11 w-11 transition-transform group-hover:rotate-6"
+          />
           <span className="flex flex-col leading-none">
             <span className="font-display text-2xl tracking-tight">CollageLab</span>
             <span className="font-hand text-sm text-warm-blue">made by people who make things</span>
