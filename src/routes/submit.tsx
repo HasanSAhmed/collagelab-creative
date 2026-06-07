@@ -138,11 +138,7 @@ function Submit() {
       <Header />
 
       <section className="relative mx-auto max-w-4xl px-5 pt-16 pb-8 text-center md:px-8 md:pt-24">
-        <p className="font-hand text-2xl text-tomato">
-          <a href="mailto:art@collagelab.ca" className="underline decoration-tomato/40 underline-offset-4 hover:decoration-tomato">art@collagelab.ca</a>
-        </p>
-        <p className="mt-2 font-hand text-2xl text-tomato">— submissions are open</p>
-        <h1 className="mt-2 font-display text-[clamp(3rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
+        <h1 className="font-display text-[clamp(3rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
           Your work<br /><span className="italic text-warm-blue">belongs</span> here.
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg text-foreground/75">
