@@ -243,23 +243,26 @@ function Submit() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="file">
-              Upload files <span className="text-muted-foreground">(optional — you can pick multiple, max {MAX_FILE_MB}MB each)</span>
+            <Label>
+              Upload files <span className="text-muted-foreground">(optional — max {MAX_FILE_MB}MB each)</span>
             </Label>
-            <Input
-              id="file"
-              type="file"
-              multiple
-              accept="image/*,video/*,audio/*,.pdf"
-              onChange={(e) => setFiles(Array.from(e.target.files ?? []))}
-            />
-            {files.length > 0 && (
-              <ul className="mt-1 list-disc pl-5 text-sm text-foreground/70">
-                {files.map((f) => (
-                  <li key={f.name}>{f.name}</li>
-                ))}
-              </ul>
-            )}
+            {files.map((file, i) => (
+              <div key={i} className="flex gap-2">
+                <Input
+                  type="file"
+                  accept="image/*,video/*,audio/*,.pdf"
+                  onChange={(e) => updateFile(i, e.target.files?.[0] ?? null)}
+                />
+                {files.length > 1 && (
+                  <Button type="button" variant="outline" onClick={() => removeFile(i)}>
+                    Remove
+                  </Button>
+                )}
+              </div>
+            ))}
+            <Button type="button" variant="outline" size="sm" onClick={addFile}>
+              + Add another file
+            </Button>
           </div>
 
           <Button type="submit" disabled={loading} size="lg" className="w-full rounded-full bg-tomato hover:bg-tomato/90 sm:w-auto">
