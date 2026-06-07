@@ -136,7 +136,7 @@ function Submit() {
       toast.success("We've got it. We read every submission — talk soon.");
       setForm({ creator_name: "", creator_email: "", title: "", medium: "painting", other_medium: "", description: "" });
       setLinks([""]);
-      setFiles([]);
+      setFiles([null]);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
