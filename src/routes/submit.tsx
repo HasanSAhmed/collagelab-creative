@@ -69,7 +69,7 @@ function Submit() {
     description: "",
   });
   const [links, setLinks] = useState<string[]>([""]);
-  const [files, setFiles] = useState<File[]>([]);
+  const [files, setFiles] = useState<(File | null)[]>([null]);
   const [loading, setLoading] = useState(false);
 
   function update<K extends keyof typeof form>(k: K, v: (typeof form)[K]) {
@@ -86,9 +86,20 @@ function Submit() {
     setLinks((arr) => arr.filter((_, idx) => idx !== i));
   }
 
+  function updateFile(i: number, f: File | null) {
+    setFiles((arr) => arr.map((x, idx) => (idx === i ? f : x)));
+  }
+  function addFile() {
+    setFiles((arr) => [...arr, null]);
+  }
+  function removeFile(i: number) {
+    setFiles((arr) => arr.filter((_, idx) => idx !== i));
+  }
+
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    for (const f of files) {
+    const realFiles = files.filter((f): f is File => f !== null);
+    for (const f of realFiles) {
       if (f.size > MAX_FILE_MB * 1024 * 1024) {
         toast.error(`"${f.name}" is over ${MAX_FILE_MB}MB. Email it to art@collagelab.ca instead.`);
         return;
@@ -97,7 +108,7 @@ function Submit() {
     setLoading(true);
     try {
       const file_paths: string[] = [];
-      for (const file of files) {
+      for (const file of realFiles) {
         const { path, token } = await getUploadUrl({
           data: { filename: file.name, contentType: file.type || "application/octet-stream" },
         });
@@ -125,7 +136,7 @@ function Submit() {
       toast.success("We've got it. We read every submission — talk soon.");
       setForm({ creator_name: "", creator_email: "", title: "", medium: "painting", other_medium: "", description: "" });
       setLinks([""]);
-      setFiles([]);
+      setFiles([null]);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
@@ -138,11 +149,7 @@ function Submit() {
       <Header />
 
       <section className="relative mx-auto max-w-4xl px-5 pt-16 pb-8 text-center md:px-8 md:pt-24">
-        <p className="font-hand text-2xl text-tomato">
-          <a href="mailto:art@collagelab.ca" className="underline decoration-tomato/40 underline-offset-4 hover:decoration-tomato">art@collagelab.ca</a>
-        </p>
-        <p className="mt-2 font-hand text-2xl text-tomato">— submissions are open</p>
-        <h1 className="mt-2 font-display text-[clamp(3rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
+        <h1 className="font-display text-[clamp(3rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
           Your work<br /><span className="italic text-warm-blue">belongs</span> here.
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg text-foreground/75">
@@ -236,23 +243,26 @@ function Submit() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="file">
-              Upload files <span className="text-muted-foreground">(optional — you can pick multiple, max {MAX_FILE_MB}MB each)</span>
+            <Label>
+              Upload files <span className="text-muted-foreground">(optional — max {MAX_FILE_MB}MB each)</span>
             </Label>
-            <Input
-              id="file"
-              type="file"
-              multiple
-              accept="image/*,video/*,audio/*,.pdf"
-              onChange={(e) => setFiles(Array.from(e.target.files ?? []))}
-            />
-            {files.length > 0 && (
-              <ul className="mt-1 list-disc pl-5 text-sm text-foreground/70">
-                {files.map((f) => (
-                  <li key={f.name}>{f.name}</li>
-                ))}
-              </ul>
-            )}
+            {files.map((file, i) => (
+              <div key={i} className="flex gap-2">
+                <Input
+                  type="file"
+                  accept="image/*,video/*,audio/*,.pdf"
+                  onChange={(e) => updateFile(i, e.target.files?.[0] ?? null)}
+                />
+                {files.length > 1 && (
+                  <Button type="button" variant="outline" onClick={() => removeFile(i)}>
+                    Remove
+                  </Button>
+                )}
+              </div>
+            ))}
+            <Button type="button" variant="outline" size="sm" onClick={addFile}>
+              + Add another file
+            </Button>
           </div>
 
           <Button type="submit" disabled={loading} size="lg" className="w-full rounded-full bg-tomato hover:bg-tomato/90 sm:w-auto">

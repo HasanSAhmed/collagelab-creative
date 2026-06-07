@@ -4,9 +4,10 @@ import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
 // ─── Email notifications via Resend ──────────────────────────────────────────
 const NOTIFY_TO = ["art@collagelab.ca", "art.collagelab@gmail.com"];
-// Until you verify collagelab.ca in Resend, sends use the shared sandbox sender.
-// After verifying the domain, change this to e.g. "CollageLab <hello@collagelab.ca>"
-const FROM_ADDRESS = "CollageLab <onboarding@resend.dev>";
+// Sends from your verified domain. Make sure collagelab.ca is verified in Resend
+// (Domains → Add → add DNS records at your registrar). Until verified, Resend
+// will reject sends from this address.
+const FROM_ADDRESS = "CollageLab <art@collagelab.ca>";
 
 async function sendNotification(subject: string, html: string, replyTo?: string) {
   const apiKey = process.env.RESEND_API_KEY;
