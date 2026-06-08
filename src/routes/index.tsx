@@ -30,7 +30,7 @@ function Index() {
       <Header />
 
       {/* ===== HERO ===== */}
-      <section className="relative mx-auto max-w-7xl px-5 pt-12 pb-24 md:px-8 md:pt-20 md:pb-32">
+      <section className="relative mx-auto max-w-7xl px-5 pt-8 pb-12 md:px-8 md:pt-12 md:pb-16">
         <div className="grid items-center gap-12 md:grid-cols-12 md:gap-10">
           {/* Left: type */}
           <div className="md:col-span-7">
@@ -57,7 +57,7 @@ function Index() {
                 to="/creators"
                 className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-base font-medium text-cream transition-transform hover:-rotate-2"
               >
-                Read issue
+                Read collage
                 <ScribbleArrow className="h-4 w-10 text-tomato" />
               </Link>
 
@@ -109,7 +109,7 @@ function Index() {
       </section>
 
       {/* ===== MANIFESTO ===== */}
-      <section className="relative mx-auto max-w-5xl px-5 py-28 text-center md:px-8">
+      <section className="relative mx-auto max-w-5xl px-5 py-14 text-center md:px-8">
         <p className="font-hand text-2xl text-tomato">— what we believe</p>
         <h2 className="mt-3 font-display text-4xl leading-[1.02] tracking-[-0.02em] md:text-6xl">
           Art belongs to anyone{" "}
@@ -122,7 +122,7 @@ function Index() {
       <FeaturedCreators />
 
       {/* ===== SUBSCRIBE ===== */}
-      <section className="relative mx-auto max-w-3xl px-5 py-28 text-center md:px-8">
+      <section className="relative mx-auto max-w-3xl px-5 py-14 text-center md:px-8">
         <ScribbleStar className="mx-auto h-12 w-12 text-tomato" />
         <h2 className="mt-4 font-display text-5xl leading-[0.95] md:text-7xl">
           CollageLab to<br />your inbox.

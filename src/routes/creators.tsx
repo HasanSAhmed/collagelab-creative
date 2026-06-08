@@ -59,17 +59,17 @@ function Creators() {
     <div className="min-h-screen overflow-x-hidden">
       <Header />
 
-      <section className="relative mx-auto max-w-5xl px-5 pt-20 pb-12 md:px-8">
+      <section className="relative mx-auto max-w-5xl px-5 pt-10 pb-6 md:px-8">
         <p className="font-hand text-2xl text-tomato">— the directory</p>
         <h1 className="mt-2 font-display text-[clamp(3rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
           This week's<br />
-          collage.
+          <span className="text-warm-blue">collage</span>.
           <ScribbleStar className="ml-3 inline h-12 w-12 align-baseline text-tomato animate-wiggle" />
         </h1>
       </section>
 
       {sections.map((sec) => (
-        <section key={sec.id} className="mx-auto max-w-7xl px-5 py-14 md:px-8">
+        <section key={sec.id} className="mx-auto max-w-7xl px-5 py-8 md:px-8">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-3 border-b-2 border-foreground pb-4">
             <h2 className="font-display text-4xl md:text-5xl">{sec.name}</h2>
             <p className="font-hand text-xl text-tomato">{sec.blurb}</p>
@@ -112,7 +112,7 @@ function Creators() {
         </section>
       ))}
 
-      <div className="py-16" />
+      <div className="py-8" />
       <Footer />
     </div>
   );

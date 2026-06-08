@@ -5,7 +5,7 @@ import logoAsset from "@/assets/logo.svg.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/creators", label: "Artists" },
+  { to: "/creators", label: "Collage" },
   { to: "/about", label: "About Us" },
   { to: "/advertise", label: "Advertise" },
 ] as const;
