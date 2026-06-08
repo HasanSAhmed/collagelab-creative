@@ -154,7 +154,7 @@ function Submit() {
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg text-foreground/75">
           Send us anything you've made — finished or unfinished, polished or weird,
-          serious or playful. We read every submission. We never charge to submit.
+          serious or playful. We read every submission.
         </p>
         <p className="mx-auto mt-3 max-w-xl text-base text-foreground/65">
           Need help, or have a file bigger than {MAX_FILE_MB}MB? Email us at{" "}

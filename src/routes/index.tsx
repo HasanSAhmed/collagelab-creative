@@ -57,7 +57,7 @@ function Index() {
                 to="/creators"
                 className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-base font-medium text-cream transition-transform hover:-rotate-2"
               >
-                Read issue
+                Read collage
                 <ScribbleArrow className="h-4 w-10 text-tomato" />
               </Link>
 

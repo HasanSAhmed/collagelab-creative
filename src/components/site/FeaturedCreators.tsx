@@ -7,7 +7,7 @@ export function FeaturedCreators() {
     <section className="relative mx-auto max-w-6xl px-5 py-24 md:px-8">
       <p className="font-hand text-2xl text-tomato">— artist spotlight</p>
       <h2 className="mt-1 font-display text-5xl leading-[0.95] md:text-6xl">
-        This month, we're<br />looking at&nbsp;<br />The Dominant 7 Jazz Combo.
+        This month, we're<br />looking at&nbsp;<span className="text-warm-blue">D7</span>.
       </h2>
 
       <div className="mt-12 grid items-center gap-10 md:grid-cols-12">

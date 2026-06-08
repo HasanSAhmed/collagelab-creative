@@ -63,7 +63,7 @@ function Creators() {
         <p className="font-hand text-2xl text-tomato">— the directory</p>
         <h1 className="mt-2 font-display text-[clamp(3rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
           This week's<br />
-          collage.
+          <span className="text-warm-blue">collage</span>.
           <ScribbleStar className="ml-3 inline h-12 w-12 align-baseline text-tomato animate-wiggle" />
         </h1>
       </section>
