@@ -48,7 +48,7 @@ function Index() {
               who <em className="text-tomato">make</em> things.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-foreground/75 md:text-xl">
-              CollageLab is a creative space for all arts accepted. Starting in Ottawa.
+              CollageLab is a creative space for all arts accepted.
             </p>
 
 

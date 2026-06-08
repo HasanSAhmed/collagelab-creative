@@ -7,7 +7,7 @@ export function FeaturedCreators() {
     <section className="relative mx-auto max-w-6xl px-5 py-24 md:px-8">
       <p className="font-hand text-2xl text-tomato">— artist spotlight</p>
       <h2 className="mt-1 font-display text-5xl leading-[0.95] md:text-6xl">
-        This month, we're<br />looking at <span className="italic text-warm-blue">Mei</span>.
+        This month, we're<br />looking at&nbsp;<br />The Dominant 7 Jazz Combo.
       </h2>
 
       <div className="mt-12 grid items-center gap-10 md:grid-cols-12">
@@ -53,7 +53,7 @@ export function FeaturedCreators() {
             to="/creators"
             className="group mt-7 inline-flex items-center gap-2 font-display text-xl"
           >
-            <span className="scribble-link">See more creators</span>
+            <span className="scribble-link">See other artists</span>
             <ScribbleArrow className="h-5 w-12 text-tomato transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
