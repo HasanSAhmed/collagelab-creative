@@ -62,8 +62,8 @@ function Creators() {
       <section className="relative mx-auto max-w-5xl px-5 pt-20 pb-12 md:px-8">
         <p className="font-hand text-2xl text-tomato">— the directory</p>
         <h1 className="mt-2 font-display text-[clamp(3rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
-          Creators we<br />
-          <span className="italic text-warm-blue">love</span> right now.
+          This week's<br />
+          collage.
           <ScribbleStar className="ml-3 inline h-12 w-12 align-baseline text-tomato animate-wiggle" />
         </h1>
       </section>
