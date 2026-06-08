@@ -4,7 +4,7 @@ import { ScribbleArrow } from "./decor";
 
 export function FeaturedCreators() {
   return (
-    <section className="relative mx-auto max-w-6xl px-5 py-24 md:px-8">
+    <section className="relative mx-auto max-w-6xl px-5 py-14 md:px-8">
       <p className="font-hand text-2xl text-tomato">— artist spotlight</p>
       <h2 className="mt-1 font-display text-5xl leading-[0.95] md:text-6xl">
         This month, we're<br />looking at&nbsp;<span className="text-warm-blue">D7</span>.
