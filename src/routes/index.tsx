@@ -129,7 +129,7 @@ function Index() {
         </h2>
 
         <p className="mx-auto mt-5 max-w-xl text-lg text-foreground/70">
-          One short email each week. A featured artist and what's happening locally.
+          One short email each week. A featured artist and what's happening in each issue.
         </p>
         <div className="mx-auto mt-10 max-w-md">
           <SubscribeForm />

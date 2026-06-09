@@ -47,7 +47,7 @@ const sections: Section[] = [
     name: "Visual Art",
     blurb: "Painting, illustration, photography, film.",
     creators: [
-      { name: "Mei Tanaka",  craft: "Illustration", hood: "Hintonburg", img: c1, tint: "bg-dusty-pink" },
+      { name: "First Name Last Name",  craft: "Medium", hood: "Where", img: c1, tint: "bg-dusty-pink" },
       { name: "Lena Park",   craft: "Photography",  hood: "ByWard",     img: c3, tint: "bg-tomato" },
       { name: "Sam Okafor",  craft: "Film",         hood: "ByWard",     img: c4, tint: "bg-dusty-purple" },
     ],

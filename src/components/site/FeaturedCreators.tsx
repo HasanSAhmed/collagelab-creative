@@ -16,7 +16,7 @@ export function FeaturedCreators() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-dusty-pink">
               <img
                 src={c1}
-                alt="Mei Tanaka, illustrator"
+                alt="First Name Last Name, Medium"
                 loading="lazy"
                 width={800}
                 height={1000}
@@ -35,19 +35,16 @@ export function FeaturedCreators() {
         </div>
 
         <div className="md:col-span-6">
-          <h3 className="font-display text-4xl">Mei Tanaka</h3>
+          <h3 className="font-display text-4xl">First Name Last Name</h3>
           <div className="mt-1 flex items-center gap-3 text-sm uppercase tracking-[0.18em] text-muted-foreground">
-            <span>Illustration</span>
-            <span className="font-hand text-base normal-case tracking-normal text-warm-blue">· Hintonburg</span>
+            <span>Medium</span>
+            <span className="font-hand text-base normal-case tracking-normal text-warm-blue">· Where</span>
           </div>
           <p className="mt-5 text-lg text-foreground/80">
-            Mei makes riso-printed dreamscapes and tiny hand-bound zines about
-            small feelings — laundromats at 11pm, the colour of a friend's couch,
-            the specific quiet of a Sunday in February.
+            About
           </p>
           <p className="mt-4 text-foreground/70">
-            Her work lives somewhere between a sketchbook and a love letter.
-            We featured eight pieces from her in this month's issue.
+            About continued
           </p>
           <Link
             to="/creators"
