@@ -51,7 +51,7 @@ export function Footer() {
 
       <div className="border-t border-cream/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-xs text-cream/50 md:flex-row md:items-center md:justify-between md:px-8">
-          <div>© {new Date().getFullYear()} CollageLab — Ottawa, ON</div>
+          <div>© {new Date().getFullYear()} CollageLab</div>
           <div className="font-hand text-sm text-mustard">cut · paste · share</div>
         </div>
       </div>

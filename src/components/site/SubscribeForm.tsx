@@ -33,14 +33,14 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
       <Input
         type="email"
         required
-        placeholder="you@somewhere.cool"
+        placeholder="art@collagelab.ca"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="rounded-full bg-cream border-2 border-foreground/20 px-5 h-12"
         maxLength={255}
       />
       <Button type="submit" disabled={loading} className="h-12 shrink-0 rounded-full bg-tomato px-6 hover:bg-tomato/90">
-        {loading ? "Sending…" : "Get the dispatch"}
+        {loading ? "Sending…" : "Yes, please"}
       </Button>
     </form>
   );
