@@ -3,5 +3,18 @@
   "name": "collagelab-creative",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "src/server.ts",
+  "main": "dist/server/server.js",
+  "build": {
+    "command": "bun run build",
+    "cwd": "."
+  },
+  "bundling": {
+    "alias": {
+      "#tanstack-router-entry": "./dist/server/assets/_tanstack-start-entry-point.js",
+      "#tanstack-start-entry": "./dist/server/assets/_tanstack-start-entry-point.js",
+      "#tanstack-start-plugin-adapters": "./dist/server/assets/__23tanstack-start-plugin-adapters-Cwee5PKy.js",
+      "tanstack-start-manifest:v": "./dist/server/assets/_tanstack-start-manifest_v-DTREn-AT.js",
+      "tanstack-start-injected-head-scripts:v": "./dist/server/assets/__23tanstack-start-plugin-adapters-Cwee5PKy.js"
+    }
+  }
 }
