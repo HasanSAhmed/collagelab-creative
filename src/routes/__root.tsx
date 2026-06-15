@@ -74,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Collage Lab is a creative ecosystem for the people who make things — artists, musicians, filmmakers, scientists, makers. Born in Ottawa." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#FAF6EC" },
+      { name: "theme-color", content: "#ffffd9" },
       { name: "twitter:title", content: "Collage Lab — Ottawa's creative ecosystem" },
       { name: "twitter:description", content: "Collage Lab is a creative ecosystem for the people who make things — artists, musicians, filmmakers, scientists, makers. Born in Ottawa." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3e33712d-99bf-4d69-8604-f2807111fdba/id-preview-81a7b18c--a6e2de07-6c8a-4310-a4af-50a25bb8f3e8.lovable.app-1779992807541.png" },
@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
