@@ -1,0 +1,15 @@
+# CollageLab
+
+> A creative ecosystem for artists, musicians, sculptors, poets, filmmakers, and makers. Born in Ottawa.
+
+CollageLab is a creative space where all arts are accepted. We publish weekly issues featuring local artists and what's happening in the creative community. Submissions are always open and free.
+
+## Pages
+
+- [Home](/): Discover featured artists, upcoming issues, and the creative ecosystem.
+- [Collage](/creators): Browse this week's featured artists and creators.
+- [Submit](/submit): Submit your work to be featured in an upcoming issue.
+- [About](/about): Learn about CollageLab and our mission.
+- [Advertise](/advertise): Partner with us and reach the creative community.
+- [Subscribe](/subscribe): Get a short weekly email with a featured artist and local happenings.
+- [Find Us](/find-us): Contact and connect with CollageLab.
