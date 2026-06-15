@@ -3,7 +3,7 @@ import heroImage from "@/assets/collage-hero.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { SubscribeForm } from "@/components/site/SubscribeForm";
-import { FeaturedCreators } from "@/components/site/FeaturedCreators";
+
 import { ScribbleArrow, ScribbleStar, Sparkle, TapeStrip } from "@/components/site/decor";
 
 export const Route = createFileRoute("/")({
@@ -119,7 +119,7 @@ function Index() {
         </h2>
       </section>
 
-      <FeaturedCreators />
+      
 
       {/* ===== SUBSCRIBE ===== */}
       <section className="relative mx-auto max-w-3xl px-5 py-14 text-center md:px-8">
