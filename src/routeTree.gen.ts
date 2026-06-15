@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SubscribeRouteImport } from './routes/subscribe'
 import { Route as SubmitRouteImport } from './routes/submit'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as FindUsRouteImport } from './routes/find-us'
 import { Route as CreatorsRouteImport } from './routes/creators'
 import { Route as AdvertiseRouteImport } from './routes/advertise'
@@ -25,6 +26,11 @@ const SubscribeRoute = SubscribeRouteImport.update({
 const SubmitRoute = SubmitRouteImport.update({
   id: '/submit',
   path: '/submit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FindUsRoute = FindUsRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/advertise': typeof AdvertiseRoute
   '/creators': typeof CreatorsRoute
   '/find-us': typeof FindUsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/submit': typeof SubmitRoute
   '/subscribe': typeof SubscribeRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/advertise': typeof AdvertiseRoute
   '/creators': typeof CreatorsRoute
   '/find-us': typeof FindUsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/submit': typeof SubmitRoute
   '/subscribe': typeof SubscribeRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/advertise': typeof AdvertiseRoute
   '/creators': typeof CreatorsRoute
   '/find-us': typeof FindUsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/submit': typeof SubmitRoute
   '/subscribe': typeof SubscribeRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/advertise'
     | '/creators'
     | '/find-us'
+    | '/sitemap.xml'
     | '/submit'
     | '/subscribe'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/advertise'
     | '/creators'
     | '/find-us'
+    | '/sitemap.xml'
     | '/submit'
     | '/subscribe'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/advertise'
     | '/creators'
     | '/find-us'
+    | '/sitemap.xml'
     | '/submit'
     | '/subscribe'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   AdvertiseRoute: typeof AdvertiseRoute
   CreatorsRoute: typeof CreatorsRoute
   FindUsRoute: typeof FindUsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SubmitRoute: typeof SubmitRoute
   SubscribeRoute: typeof SubscribeRoute
 }
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/submit'
       fullPath: '/submit'
       preLoaderRoute: typeof SubmitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/find-us': {
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdvertiseRoute: AdvertiseRoute,
   CreatorsRoute: CreatorsRoute,
   FindUsRoute: FindUsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SubmitRoute: SubmitRoute,
   SubscribeRoute: SubscribeRoute,
 }
