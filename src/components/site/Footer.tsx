@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Mail } from "lucide-react";
-import logoAsset from "@/assets/logo.svg.asset.json";
+import logoAsset from "@/assets/cl-lab-logo.png.asset.json";
 
 export function Footer() {
   return (
     <footer className="relative mt-24 border-t border-foreground/15 bg-foreground text-cream">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
         <div className="flex items-center gap-3">
-          <img src={logoAsset.url} alt="CollageLab logo" className="h-10 w-10" />
+          <img src={logoAsset.url} alt="CollageLab logo" className="h-10 w-10 rounded-full bg-cream p-1" />
           <div className="flex flex-col leading-tight">
             <span className="font-display text-xl">CollageLab</span>
             <span className="font-hand text-sm text-mustard">creativity lives here</span>
