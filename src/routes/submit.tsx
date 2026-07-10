@@ -34,7 +34,7 @@ const MEDIA = [
   { v: "illustration", l: "Illustration" },
   { v: "sculpture", l: "Sculpture" },
   { v: "ceramics", l: "Ceramics" },
-  { v: "music", l: "Music / audio" },
+  { v: "music", l: "Music" },
   { v: "photography", l: "Photography" },
   { v: "film", l: "Film / video" },
   { v: "animation", l: "Animation" },

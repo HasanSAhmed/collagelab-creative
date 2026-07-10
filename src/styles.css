@@ -77,7 +77,7 @@
 
   /* Collage palette — warm, muted, tuned for buttercream background */
   --tomato:       oklch(0.56 0.19 30);     /* deeper for contrast on cream-yellow */
-  --warm-blue:    oklch(0.48 0.10 240);    /* darker blue */
+  --warm-blue:    #d27273;                 /* special accent (coral) */
   --earth-green:  oklch(0.52 0.11 130);    /* deeper green */
   --mustard:      oklch(0.65 0.14 75);     /* darker mustard */
   --dusty-pink:   oklch(0.72 0.08 20);
