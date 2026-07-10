@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Mail } from "lucide-react";
-import logoAsset from "@/assets/cl-lab-logo.png.asset.json";
+import logoAsset from "@/assets/cl-lab-logo-v2.png.asset.json";
 
 export function Footer() {
   return (
